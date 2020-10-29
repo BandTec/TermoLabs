@@ -436,7 +436,7 @@ justify-content: center;
 /* Página Contatos */
 
 .contato1{
-    height: 675px;
+    height: 900px;
     width: 100%;
     display: flex;
     background-color:#ebe6e0;
@@ -458,6 +458,16 @@ justify-content: center;
 }
 
 .form_conteudo{
+    padding: 20px 20px;
+    width: 206px;
+    height: 15px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: #f5eadc;
+    outline: 0;
+} 
+
+.form_mensagem{
     padding: 20px 20px;
     width: 206px;
     height: 15px;
