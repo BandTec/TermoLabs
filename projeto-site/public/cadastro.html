@@ -30,8 +30,8 @@
           <label for="nome">Nome e sobrenome</label>
           <input type="text" name="nome" class="cadastro_input" autofocus="autofocus" placeholder="Nome completo" required minlength="4">
   
-          <label for="email">Email</label>
-          <input type="email" name="email" class="cadastro_input" placeholder="Email para Login" required minlength="4">
+          <label for="login">Email</label>
+          <input type="email" name="login" class="cadastro_input" placeholder="Email para Login" required minlength="4">
           
           <label for="senha">Senha</label>
           <input type="password" name="senha" class="cadastro_input" placeholder="**********" required minlength="4">
@@ -40,8 +40,8 @@
         </form>
   
         
-        <div id="div_erro">
-         
+        <div id="div_erro2" style="background-color: #bf8899; color: maroon; display: none;">
+            Erro no cadastro
         </div>
       </div>
 
@@ -53,36 +53,40 @@
 
 <script>
 
-    function cadastrar() {
-        
+function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
             body: formulario
         }).then(function (response) {
-            
+
             if (response.ok) {
-                alert('Cadastro Realizado com Sucesso')
-                window.location.href='login.html';
+
+                 window.location.href='login.html';
+                alert('Cadastro concluido com sucesso');
 
             } else {
 
                 console.log('Erro de cadastro!');
-                div_erro.innerHTML = 'Email ou senha invalidos';
-                
+                response.text().then(function (resposta) {
+                    div_erro2.innerHTML = resposta;
+                });
                 finalizar_aguardar();
             }
         });
 
         return false;
     }
-
     function aguardar() {
         btn_entrar.disabled = true;
+        div_erro2.style.visibility = 'hidden';
+    }
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        div_erro2.style.visibility = 'visible';
+        div_erro2.innerHTML = resposta;
     }
 
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-    }
+
 
 </script>
