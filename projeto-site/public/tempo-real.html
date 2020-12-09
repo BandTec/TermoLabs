@@ -193,7 +193,7 @@
 
         // comparando
         if (temperatura > limites.max_temperatura) {
-            mensagem_temperatura += 'Temperatura alta demais! <br>';
+            mensagem_temperatura += '<b>TEMPERATURA ALTA DEMAIS!</b> <br>';
             classe_temperatura = 'alerta alerta-alto';
         }
         // if (umidade > limites.max_umidade) {
@@ -201,7 +201,7 @@
         //     classe_umidade = 'alerta_umidd alerta-alto';
         // }
         if (temperatura < limites.min_temperatura) {
-            mensagem_temperatura = 'Temperatura baixa demais! <br>';
+            mensagem_temperatura = '<B>TEMPERATURA BAIXA DEMAIS!</B> <br>';
             classe_temperatura = 'alerta alerta-baixo';
         }
         // if (umidade < limites.min_umidade) {
