@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboards.css">
+    <style type="text/css">
+        @import url('https://termolabs.helpspot.com/widgets/widgets.css');
+    </style>
+    <script type="text/javascript" src="suporte.js"></script>
+    <script type="text/javascript">
+        HelpSpotWidget.Tab.show({
+            // Nearly every aspect of the widget is customizable, complete documentation here:
+            // http://www.helpspot.com/helpdesk/index.php?pg=kb.page&id=323
+            host: 'https://termolabs.helpspot.com'
+        });
+    </script>
+    <title>-Suporte Termolabs-</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img src="../public/Imagens/LogoSemFundo.png" alt="Termolabs">
+            <div class="usuario">
+                <h3>Olá, <b id="b_usuario"></b></h3>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li> <a href="tempo-real.html">Tempo Real</a></li>
+                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
+                    <li><a href="grafico-chartjs.html">Gráficos</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Fim nav  -->
+
+    <!-- Inicio suporte -->
+
+    <section class="secao_suporte">
+        <div class="faq_cliente">
+            <div class="box_cliente">
+                <h1>FAQ</h1>
+                <h3>Antes de contatar o suporte, observe as opções abaixo</h3>
+                <p>1. Verifique se o notebook conectado ao arduíno está ligado.</p>
+                <p>2. Verifique sua rede de internet, se está funcionando.</p>
+                <p>3. Verifique se o arduíno está conectado ao notebook.</p>
+                <p>4. Verifique se o sensor está conectado ao arduíno.</p>
+   
+                <div class="passo_a_passo">
+                    <p>Se não solucionar o problema, mande um ticket para nós clicando no botão abaixo.</p>
+                    <p>Depois, clique em "Submit a Request",</p>
+                    <p>Preencha seus dados e a descrição do problema(importante).</p>
+                </div>
+                <div class="onde_vai_o_button">
+                    <button onclick="abrir()" class="btn_suporte">Suporte</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
+<script>
+    function abrir(){
+        window.open("https://termolabs.helpspot.com", "_blank");
+    }                
+
+
+</script>

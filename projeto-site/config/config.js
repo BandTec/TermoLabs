@@ -2,7 +2,7 @@ module.exports = {
   production: {
     username: 'termolabs',
     password: '#Gfgrupo8',
-    database: 'BDGrupo08 ',
+    database: 'BDGrupo08',
     host: 'bdgrupo08.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',

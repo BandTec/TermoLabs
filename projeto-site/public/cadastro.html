@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proj. Individual | Meu nome aqui</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contato-e-login.css">
-    <script src="https://kit.fontawesome.com/48b24e7021.js" crossorigin="anonymous"></script>
+    <title>TermoLABs - Trabalhe Conosco</title>
+    <link rel="stylesheet" href="CSS/stylecadastro.css">
 </head>
+
 <body>
-    <!--header inicio-->
-    <div class="header">
+    </head>
+
+    <body>
         <div class="container">
-            <h1 class="titulo"> <span class="highlight"></span> </h1>
-            <div class="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
+            <div class="form-box">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <div>
+                        <h1>Cadastro do Usuário</h1>
+                    </div>
+                    <div>
+                        <input type="text" name="nome" placeholder="Informe o seu E-mail" class="form-input">
+                    </div>
+                    <div>
+                        <input type="text" name="login" placeholder="Informe o seu Login" class="form-input">
+                    </div>
+                    <div>
+                        <input type="password" name="senha" placeholder="Informe a sua Senha" class="form-input">
+                    </div>
+                    <div>
+                        <input type="submit" id="btn_entrar" value="Cadastrar" class="form-input">
+                    </div>
+                    <div>
+                        Você já tem uma conta? <a href="login.html">Efetue o seu Login</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-    <!--header fim-->
 
-    <div class="cadastro_formulario">
-        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-          <label for="nome">Nome e sobrenome</label>
-          <input type="text" name="nome" class="cadastro_input" autofocus="autofocus" placeholder="Nome completo" required minlength="4">
-  
-          <label for="login">Email</label>
-          <input type="email" name="login" class="cadastro_input" placeholder="Email para Login" required minlength="4">
-          
-          <label for="senha">Senha</label>
-          <input type="password" name="senha" class="cadastro_input" placeholder="**********" required minlength="4">
-  
-          <button type="submit" id="btn_entrar" value="Cadastrar" class="btn"> Cadastrar </button>
-        </form>
-  
-        
-        <div id="div_erro2" style="background-color: #bf8899; color: maroon; display: none;">
+        <!-- <div class="contato">
+        <div class="container">
+            <h1>Faça aqui seu cadastro!</h1>
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    email
+                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
+                    
+                    Login
+                    <input type="text" name="login" class="input-padrao" placeholder="seu nome de usuário" required minlength="4">
+                    
+                    Senha
+                    <input type="password" name="senha" class="input-padrao" placeholder="***************" required minlength="4">
+                    
+                        
+                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
+                </form>
+
+              
+                
+            </div>
+            <div class="imagem-lateral">
+                <img src="img/side-img-contato_orange.jpg">
+            </div>
+        </div>
+    </div>  -->
+        <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
             Erro no cadastro
         </div>
-      </div>
+    </body>
 
-    
-
-    
-</body>
 </html>
 
-<script>
 
-function cadastrar() {
+<script>
+    function cadastrar() {
+        aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -62,14 +82,13 @@ function cadastrar() {
 
             if (response.ok) {
 
-                 window.location.href='login.html';
-                alert('Cadastro concluido com sucesso');
+                window.location.href = 'login.html';
 
             } else {
 
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
-                    div_erro2.innerHTML = resposta;
+                    div_erro.innerHTML = resposta;
                 });
                 finalizar_aguardar();
             }
@@ -77,16 +96,16 @@ function cadastrar() {
 
         return false;
     }
+
     function aguardar() {
         btn_entrar.disabled = true;
-        div_erro2.style.visibility = 'hidden';
+
+        div_erro.style.display = 'none';
     }
-    function finalizar_aguardar(resposta) {
+
+    function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        div_erro2.style.visibility = 'visible';
-        div_erro2.innerHTML = resposta;
+
+        div_erro.style.display = 'block';
     }
-
-
-
 </script>

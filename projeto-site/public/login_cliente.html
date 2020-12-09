@@ -7,7 +7,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
 	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-	<link rel="stylesheet" href="../Prototipo Site/CSS/styledash.css">
+	<link rel="stylesheet" href="CSS/styledash.css">
+	<style type="text/css">@import url('https://termolabs.helpspot.com/widgets/widgets.css');</style>
+	<script type="text/javascript" src="suporte.js"></script>
+	<script type="text/javascript">
+	HelpSpotWidget.Tab.show({ 
+		// Nearly every aspect of the widget is customizable, complete documentation here:
+		// http://www.helpspot.com/helpdesk/index.php?pg=kb.page&id=323
+		host: 'https://termolabs.helpspot.com'
+	});
+	</script>
 	<style>
 		canvas {
 			-moz-user-select: none;
@@ -15,21 +24,22 @@
 			-ms-user-select: none;
 		}
 	</style>
+	
 </head>
 
 <body>
 
 	<div class="navbar">
 		<div class="container_navbar">
-			<a href="../Prototipo Site/Index.html"><img src="../Prototipo Site/Imagens/LogoTerm.png" alt="Logo"></a>
+			<a href="Index.html"><img src="Imagens/LogoTerm.png" alt="Logo"></a>
 			<ul>
 				<li>Dashboard</li> 
 				<li>Suporte</li>
 				<li>Relatório</li>
+				<li><a href="index.html" onclick="logoff()">LOGOUT</a></li>
 			</ul>
 		</div>
 	</div>
-
 	<div class="navbar_empresa">
 		<div class="container_empresa">
 		<img src="../Prototipo Site/Imagens/Medley.png" alt="empresa">
