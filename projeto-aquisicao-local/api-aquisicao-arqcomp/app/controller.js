@@ -86,11 +86,11 @@ db.conectar()
       INSERT into dbo.leitura (temperatura, momento, fkSensor)
       values (${temperatura}, '${agora()}', 1);
       INSERT into dbo.leitura (temperatura, momento, fkSensor)
-      values (${temperatura-1}, '${agora()}', 2);
+      values (${temperatura-1.29}, '${agora()}', 2);
       INSERT into dbo.leitura (temperatura, momento, fkSensor)
-      values (${temperatura+1}, '${agora()}', 3);
+      values (${temperatura+1.53}, '${agora()}', 3);
       INSERT into dbo.leitura (temperatura, momento, fkSensor)
-      values (${temperatura-2}, '${agora()}', 4);`;
+      values (${temperatura-2.61}, '${agora()}', 4);`;
       console.log(sql);
     return db.sql.query(sql).then(()=>{
         console.log("Registro inserido com sucesso! \n");
