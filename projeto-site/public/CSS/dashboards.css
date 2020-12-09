@@ -83,6 +83,67 @@ a {
     color: #e74c3c;
     font-weight: bold;
 }
+.header {
+    background-color: #ffffff;
+    border-right: 3px solid #e74c3c;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+}
+
+
+.secao_suporte {
+    width: 100%;
+    height: 765px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.faq_cliente {
+    width: 80%;
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.btn_suporte {
+    width: 40%;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn_suporte:hover, .btn_suporte.active {
+    background-color: #ffffff;
+    color: #e74c3c;
+    transition: .5s;
+}
+.box_cliente{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.passo_a_passo{
+    margin-top: 30px;
+    border-top: #e74c3c solid 2px;
+}
+.box_cliente p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.box_cliente h1, h3 {
+    color: #e74c3c;
+}
 
 
 /* dashboard */
